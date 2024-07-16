@@ -1,0 +1,28 @@
+config:
+  schema_config:
+    configs:
+      - from: 2024-07-16
+        store: boltdb-shipper
+        object_store: s3
+        schema: v11
+        index:
+          prefix: index_
+          period: 24h
+  storage_config:
+    aws:
+      s3: s3://us-east-1/grafana-lokii-storage
+      region: us-east-1
+    s3:
+      s3forcepathstyle: true
+    s3config:
+      s3: s3://us-east-1/grafana-lokii-storage
+      s3forcepathstyle: true
+      region: us-east-1
+    s3forcepathstyle: true
+    aws:
+      s3:
+        s3: s3://us-east-1/grafana-lokii-storage
+        s3forcepathstyle: true
+        region: us-east-1
+  limits_config:
+    retention_period: 168h
